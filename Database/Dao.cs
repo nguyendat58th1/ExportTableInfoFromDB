@@ -1,27 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Oracle.ManagedDataAccess.Client;
+using System.Configuration;
+using System.Data;
+using System.Diagnostics;
 
 namespace Database
 {
 	public class Dao
 	{
-		NexEntities context = new NexEntities();
-		public DbSet GetDbSet(string tableName)
+		public DataTable GetDataForGridView(string tableName)
 		{
-			var type = Assembly.GetExecutingAssembly()
-					.GetTypes()
-					.FirstOrDefault(t => t.Name == tableName);
-			if(type == null)
+			DataTable data = new DataTable();
+			string connString = GetConnectionString();
+			Debug.WriteLine(connString);
+			string sqlRead = "SELECT t1.column_name ,t1.data_type || '(' || t1.data_length || ')' AS DATA_TYPE, t2.comments " +
+							"FROM all_tab_columns t1, all_col_comments t2 " +
+							"WHERE t1.column_name  = t2.COLUMN_NAME AND t1.TABLE_NAME =  " +
+							":TABLENAME AND t2.TABLE_NAME = :TABLENAME";
+
+			using (var conn = new OracleConnection(connString))
 			{
-				return null;
+				conn.Open();
+				using (var cmd = new OracleCommand(sqlRead, conn))
+				{
+					cmd.Parameters.Add(":TABLENAME", tableName);
+					OracleDataReader odr = cmd.ExecuteReader(); //Read data
+					OracleDataAdapter oda = new OracleDataAdapter(cmd);
+					oda.Fill(data);
+				}
 			}
-			DbSet newContext = context.Set(type);
-			return newContext;
+			return data;
+		}
+
+		private string GetConnectionString()
+		{
+			return ConfigurationManager.ConnectionStrings["NexEntities"].ConnectionString;
 		}
 	}
 }

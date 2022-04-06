@@ -104,25 +104,15 @@ namespace ExportToExcel
 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			string connString = "DATA SOURCE=localhost:1521/XE;PASSWORD=ixfds;PERSIST SECURITY INFO=True;USER ID=IXFDS";
-			string sqlRead = "SELECT t1.column_name ,t1.data_type , t1.data_length, t2.comments " +
-							"FROM all_tab_columns t1, all_col_comments t2 " +
-							"WHERE t1.column_name  = t2.COLUMN_NAME AND t1.TABLE_NAME =  " +
-							":TABLENAME AND t2.TABLE_NAME = :TABLENAME";
-			
-			using (var conn = new OracleConnection(connString))
+			Dao dao = new Dao();
+			try
 			{
-				conn.Open();
-				using (var cmd = new OracleCommand(sqlRead, conn))
-				{
-					string tableNameParam = comboBox.SelectedItem.ToString();
-					cmd.Parameters.Add(":TABLENAME", tableNameParam);
-					OracleDataReader odr = cmd.ExecuteReader(); //Read data
-					OracleDataAdapter oda = new OracleDataAdapter(cmd);
-					DataTable data = new DataTable();
-					oda.Fill(data);
-					dataGridView.DataSource = data;
-				}
+				dataGridView.DataSource = dao.GetDataForGridView(comboBox.SelectedItem.ToString());
+			}
+			catch (Exception ex)
+			{
+
+				MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 	}
