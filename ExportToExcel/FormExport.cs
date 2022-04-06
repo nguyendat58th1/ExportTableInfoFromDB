@@ -105,14 +105,11 @@ namespace ExportToExcel
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			string connString = "DATA SOURCE=localhost:1521/XE;PASSWORD=ixfds;PERSIST SECURITY INFO=True;USER ID=IXFDS";
-			string sqlRead = "SELECT t1.COLUMN_NAME, t1.DATA_TYPE || '(' || t1.DATA_LENGTH || ')' AS DATA_TYPE , t2.COMMENTS  FROM " +
-							"(SELECT COLUMN_NAME, DATA_TYPE, DATA_LENGTH FROM all_tab_columns WHERE table_name = :TABLENAME) t1 " +
-							"JOIN " +
-							"(SELECT COLUMN_NAME, COMMENTS " +
-							"FROM ALL_COL_COMMENTS " +
-							"WHERE OWNER LIKE 'IXFDS' AND TABLE_NAME LIKE :TABLENAME) t2 " +
-							"ON t1.COLUMN_NAME = t2.COLUMN_NAME";
-
+			string sqlRead = "SELECT t1.column_name ,t1.data_type , t1.data_length, t2.comments " +
+							"FROM all_tab_columns t1, all_col_comments t2 " +
+							"WHERE t1.column_name  = t2.COLUMN_NAME AND t1.TABLE_NAME =  " +
+							":TABLENAME AND t2.TABLE_NAME = :TABLENAME";
+			
 			using (var conn = new OracleConnection(connString))
 			{
 				conn.Open();
