@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{220212C2-97EB-46B1-BA05-AA94A5C8D23F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Database</RootNamespace>
+    <AssemblyName>Database</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.18.3.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.18.3.0\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao.cs" />
+    <Compile Include="DC_COLOR_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_DOCUMENT_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_DOCUMENT_HISTORY.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_DOCUMENT_HISTORY_COPY_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_DOCUMENT_HISTORY_COPY_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_FONT_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_IMAGE_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_IMAGE_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_INDEX_ADDITIONAL_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_INDEX_ADDITIONAL_PRINT_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_INDEX_COLOR_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_INDEX_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_INDEX_STYLE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_INDEX_SYN_SETTING.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_POINT_MARK.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_PRINT_INFO_BG_IMAGE_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_PRINT_INFO_BG_IMAGE_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_PRINT_INFO_BG_SETTING.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_PRINT_INFO_DETAIL.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_PRINT_INFO_HEAD.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_PRINT_INFO_INDEX_SETTING.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_PRINT_INFO_PAGE_BG_SETTING.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_PRINT_INFO_PAGE_NUM_SETTING.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_SEARCH_CHARACTER.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_STYLE_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_SUBMIT_FILECHECK_RESULT.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_SUBMIT_FILE_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_SUBMIT_FILE_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DC_SUBMIT_FILE_INIT_SETTING.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FWD_AUDIT_SCHEDULE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FWD_BUSINESS_CALENDER.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FWD_BUSINESS_CALENDER_MSG.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FWD_ERROR_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FWD_FINANCIAL_STATUS.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FWD_KANRYU_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FWD_KANRYU_FUND_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FWD_KANRYU_SCHEDULE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FWD_REPORT_SCHEDULE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FWD_RINPOU_STATUS.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FWD_SCHEDULE_STATUS.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FWD_STP_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FWD_STP_SNAPSHOT.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FWD_SUBMIT_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FWD_SUBMIT_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GA_USER_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GA_USER_PASSWORD.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GA_USER_ROLE_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_GRAPH_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_INDESIGN_BGPOUR_QUEUE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_INDESIGN_COLOR_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_INDESIGN_FILE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_INDESIGN_FILE_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_INDESIGN_FONT_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_INDESIGN_IMG.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_INDESIGN_IMG_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_INDESIGN_PDF_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_INDESIGN_REFLECT_STAT.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_LABEL_PAGE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_PAGE_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_PARTS_IMAGE_SETTING.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_PERFORMANCE_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_PERFORMANCE_QUEUE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_SCHEDULE_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ID_WORKLOG_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_APPLICABLE_DATE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_APPLICABLE_DATE_PUBLISH.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_BLUE_LINK_DISCONNECT_STATUS.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_BLUE_LINK_DURATION.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_BLUE_LINK_DURATION_ENTRY.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_BLUE_LINK_DURATION_PUBLISH.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_BLUE_LINK_ITEM.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_BLUE_LINK_PATTERN.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_BLUE_LINK_RELATION_ENTRY.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_BLUE_LINK_RELATION_PUBLISH.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_BLUE_LINK_SOURCE_ENTRY.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_BLUE_LINK_SOURCE_PUBLISH.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_BLUE_LINK_SUBSCRIBE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_ORANGE_LINK_DISCONNECT_STAT.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_ORANGE_LINK_ITEM.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_ORANGE_LINK_SOURCE_ENTRY.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_ORANGE_LINK_SOURCE_PUBLISH.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_ORANGE_LINK_SUBSCRIBE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_RED_LINK_BRANCH.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_RED_LINK_PATTERN.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_RED_LINK_PERIOD.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_RED_LINK_PERIOD_ENTRY.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_RED_LINK_PERIOD_PUBLISH.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_RED_LINK_RELATION.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_RED_LINK_RELATION_ENTRY.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_RED_LINK_SOURCE_ENTRY.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_RED_LINK_SOURCE_IMAGE_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_RED_LINK_SOURCE_PUBLISH.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_RED_LINK_SUBSCRIBE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LK_RED_LINK_TARGET_INDEX.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NexEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NexEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NexEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NexEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NexEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ACCESS_GROUP_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ACCESS_GROUP_MASTER.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_AGREEMENT_RELATION.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_APPROVAL_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ATTACH_DOC_FILE_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ATTACH_DOC_FILE_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ATTACH_DOC_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ATTACH_DOC_REVISION_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ATTACH_DOC_SHINKYUU_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ATTACH_DOC_SHINKYUU_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_AUTO_GRP_JOB_REF.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_AUTO_GRP_MST.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_CHARGE_COMPANY_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_COMPANY_ADDITIONAL_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_COMPANY_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_CUST_GRP_JOB_REF.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_CUST_GRP_MST.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_DOCUMENT_ACCESS_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_DOCUMENT_BASE_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_DOCUMENT_BASE_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_DOCUMENT_CHECKOUT.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_DOCUMENT_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_DOC_COMMENT.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ERRATUM_FILE_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ERRATUM_FILE_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_FINANCIAL_SCHEDULE_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_FONT_INFO_MASTER.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_FUND_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_GENERAL_AUTHORITY_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_INSIDER_GROUP.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_INSIDER_GROUP_DOC_FORM_MAP.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_JOB_FORM_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_JOB_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_MARKING_ITEM_LIST.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_MESSAGE_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_MESSAGE_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_MST_GRP_FUND_REF.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_MST_GRP_MST.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_OPTION_CONTRACT_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ORDER_ACCESS_HISTORY_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ORDER_ACCESS_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ORDER_ACCESS_INIT_SETTING.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ORDER_ACCESS_USER_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ORDER_ADDITIONAL_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ORDER_ATTACH_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ORDER_GROUP.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ORDER_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_PDF_FILE_COUPLING.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_PDF_INDEX_MODEL.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_PDF_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_PDF_OUTPUT_PATTERN_SETTING.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_PDF_PAGE_SETTING.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_README_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_README_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_RELATION_FUND.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_RELATION_ORDER.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_REVISION_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_REV_ORG_MAPPING.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_ROLE_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_SCENARIO_CHANGE_LOG.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_SELECT_GRP_AND_JOB.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_TEISEI_OPTION_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_USER_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_USER_LOGIN_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_USER_OPTION_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OM_USER_PASSWORD.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SCHEMAVERSIONS.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_ACCESS_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_BASIC_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_CONTEXT.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_ENTITY.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_EXPLICIT_MEMBER.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_FOOTNOTE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_FOOTNOTE_STR_ITEM.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_FS_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_MEDURE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_PERIOD.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_PTRN_REF.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_SCENARIO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_SERIES_FS_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_STR_ITEM.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_STR_ITEM_EXPLICIT_MEMBER.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_TAXONOMY_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_UNIT.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_UNIT_DENOMINATOR_MEDURE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_UNIT_ELEMENT_TYPE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XB_UNIT_NUMERATOR_MEDURE.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="NexEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NexEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="NexEntities.edmx.diagram">
+      <DependentUpon>NexEntities.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NexEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NexEntities.edmx</DependentUpon>
+      <LastGenOutput>NexEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="NexEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NexEntities.edmx</DependentUpon>
+      <LastGenOutput>NexEntities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
