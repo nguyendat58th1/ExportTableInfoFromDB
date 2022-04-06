@@ -1,5 +1,6 @@
 ﻿using ClosedXML.Excel;
 using Database;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -103,15 +104,30 @@ namespace ExportToExcel
 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			Dao dao = new Dao();
-			var dbSet = dao.GetDbSet(comboBox.SelectedItem.ToString());
-			var props = PropertiesFromTypeExceptVitualMethod(dbSet.Create());
-			dataGridView.Columns.Clear();
-			for (int i = 0; i < props.Count(); i++)
+			//Dao dao = new Dao();
+			//var dbSet = dao.GetDbSet(comboBox.SelectedItem.ToString());
+			//var props = PropertiesFromTypeExceptVitualMethod(dbSet.Create());
+			//dataGridView.Columns.Clear();
+			//for (int i = 0; i < props.Count(); i++)
+			//{
+			//	dataGridView.Columns.Add(string.Format("col{0}", i), props[i]);
+			//}
+			string connString = "DATA SOURCE=localhost:1521/XE;PASSWORD=ixfds;PERSIST SECURITY INFO=True;USER ID=IXFDS";
+			string sqlRead = $"SELECT COLUMN_NAME, DATA_TYPE, DATA_LENGTH  FROM all_tab_columns WHERE table_name = '{comboBox.SelectedItem.ToString()}'";
+			using (var conn = new OracleConnection(connString))
 			{
-				dataGridView.Columns.Add(string.Format("col{0}", i), props[i]);
+				conn.Open();
+				using (var cmd = new OracleCommand(sqlRead, conn))
+				{
+					string tableNameParam = comboBox.SelectedItem.ToString();
+					//cmd.Parameters.Add(":TABLENAME", tableNameParam);
+					OracleDataReader odr = cmd.ExecuteReader(); //Read data
+					OracleDataAdapter oda = new OracleDataAdapter(cmd);
+					DataTable data = new DataTable();
+					oda.Fill(data);
+					dataGridView.DataSource = data;
+				}
 			}
-
 		}
 	}
 }

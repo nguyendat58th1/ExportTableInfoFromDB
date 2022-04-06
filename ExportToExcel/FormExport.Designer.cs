@@ -37,15 +37,15 @@
 			// dataGridView
 			// 
 			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView.Location = new System.Drawing.Point(12, 175);
+			this.dataGridView.Location = new System.Drawing.Point(328, 73);
 			this.dataGridView.Name = "dataGridView";
-			this.dataGridView.Size = new System.Drawing.Size(776, 263);
+			this.dataGridView.Size = new System.Drawing.Size(382, 263);
 			this.dataGridView.TabIndex = 0;
 			this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
 			// 
 			// btnExport
 			// 
-			this.btnExport.Location = new System.Drawing.Point(713, 135);
+			this.btnExport.Location = new System.Drawing.Point(247, 100);
 			this.btnExport.Name = "btnExport";
 			this.btnExport.Size = new System.Drawing.Size(75, 23);
 			this.btnExport.TabIndex = 1;
@@ -56,7 +56,7 @@
 			// comboBox
 			// 
 			this.comboBox.FormattingEnabled = true;
-			this.comboBox.Location = new System.Drawing.Point(493, 137);
+			this.comboBox.Location = new System.Drawing.Point(108, 73);
 			this.comboBox.Name = "comboBox";
 			this.comboBox.Size = new System.Drawing.Size(214, 21);
 			this.comboBox.TabIndex = 2;
