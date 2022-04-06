@@ -43,14 +43,14 @@
 			this.dataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.dataGridView.Location = new System.Drawing.Point(0, 90);
 			this.dataGridView.Name = "dataGridView";
-			this.dataGridView.Size = new System.Drawing.Size(408, 289);
+			this.dataGridView.Size = new System.Drawing.Size(542, 289);
 			this.dataGridView.TabIndex = 0;
 			this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
 			// 
 			// btnExport
 			// 
 			this.btnExport.AutoSize = true;
-			this.btnExport.Location = new System.Drawing.Point(304, 35);
+			this.btnExport.Location = new System.Drawing.Point(324, 35);
 			this.btnExport.Name = "btnExport";
 			this.btnExport.Size = new System.Drawing.Size(92, 23);
 			this.btnExport.TabIndex = 1;
@@ -79,18 +79,19 @@
 			// 
 			// btnExportAll
 			// 
-			this.btnExportAll.Location = new System.Drawing.Point(304, 65);
+			this.btnExportAll.Location = new System.Drawing.Point(438, 35);
 			this.btnExportAll.Name = "btnExportAll";
 			this.btnExportAll.Size = new System.Drawing.Size(92, 23);
 			this.btnExportAll.TabIndex = 4;
 			this.btnExportAll.Text = "Export All";
 			this.btnExportAll.UseVisualStyleBackColor = true;
+			this.btnExportAll.Click += new System.EventHandler(this.btnExportAll_Click);
 			// 
 			// FormExport
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(408, 379);
+			this.ClientSize = new System.Drawing.Size(542, 379);
 			this.Controls.Add(this.btnExportAll);
 			this.Controls.Add(this.label);
 			this.Controls.Add(this.comboBox);
