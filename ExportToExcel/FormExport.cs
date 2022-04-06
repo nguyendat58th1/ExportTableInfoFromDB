@@ -31,9 +31,9 @@ namespace ExportToExcel
 			{
 				comboBox.Items.Add(prop);
 			}
-
-			//var dbSet = dao.GetDbSet(comboBox1.SelectedItem.ToString());
-			//dataGridView.DataSource = PropertiesFromTypeExceptVitualMethod(dbSet.Create());
+			this.comboBox.DropDownStyle = ComboBoxStyle.DropDown;
+			this.comboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+			this.comboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
 		}
 
 		public List<string> PropertiesFromTypeOnlyVitualMethod(object atype)
@@ -102,20 +102,10 @@ namespace ExportToExcel
 			}
 		}
 
-		public static DataTable ToDataTable(List<string> list)
-		{
-			DataTable dataTable = new DataTable();
-			foreach (var col in list)
-			{
-				dataTable.Columns.Add(col);
-			}
-			return dataTable;
-		}
-
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			string connString = "DATA SOURCE=localhost:1521/XE;PASSWORD=ixfds;PERSIST SECURITY INFO=True;USER ID=IXFDS";
-			string sqlRead1 = "SELECT t1.COLUMN_NAME, t1.DATA_TYPE || '(' || t1.DATA_LENGTH || ')' AS DATA_TYPE , t2.COMMENTS  FROM " +
+			string sqlRead = "SELECT t1.COLUMN_NAME, t1.DATA_TYPE || '(' || t1.DATA_LENGTH || ')' AS DATA_TYPE , t2.COMMENTS  FROM " +
 							"(SELECT COLUMN_NAME, DATA_TYPE, DATA_LENGTH FROM all_tab_columns WHERE table_name = :TABLENAME) t1 " +
 							"JOIN " +
 							"(SELECT COLUMN_NAME, COMMENTS " +
@@ -126,7 +116,7 @@ namespace ExportToExcel
 			using (var conn = new OracleConnection(connString))
 			{
 				conn.Open();
-				using (var cmd = new OracleCommand(sqlRead1, conn))
+				using (var cmd = new OracleCommand(sqlRead, conn))
 				{
 					string tableNameParam = comboBox.SelectedItem.ToString();
 					cmd.Parameters.Add(":TABLENAME", tableNameParam);
