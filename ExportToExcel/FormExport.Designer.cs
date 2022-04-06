@@ -48,6 +48,7 @@
 			// 
 			// btnExport
 			// 
+			this.btnExport.AutoSize = true;
 			this.btnExport.Location = new System.Drawing.Point(304, 35);
 			this.btnExport.Name = "btnExport";
 			this.btnExport.Size = new System.Drawing.Size(92, 23);
