@@ -23,7 +23,7 @@ namespace Database
 				using (var cmd = new OracleCommand(sqlRead, conn))
 				{
 					cmd.Parameters.Add(":TABLENAME", tableName);
-					OracleDataReader odr = cmd.ExecuteReader(); //Read data
+					cmd.ExecuteReader(); //Read data
 					OracleDataAdapter oda = new OracleDataAdapter(cmd);
 					oda.Fill(data);
 				}

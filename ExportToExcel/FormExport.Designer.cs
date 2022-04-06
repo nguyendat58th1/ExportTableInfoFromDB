@@ -32,6 +32,7 @@
 			this.btnExport = new System.Windows.Forms.Button();
 			this.comboBox = new System.Windows.Forms.ComboBox();
 			this.label = new System.Windows.Forms.Label();
+			this.btnExportAll = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -76,11 +77,21 @@
 			this.label.TabIndex = 3;
 			this.label.Text = "Select table";
 			// 
+			// btnExportAll
+			// 
+			this.btnExportAll.Location = new System.Drawing.Point(304, 65);
+			this.btnExportAll.Name = "btnExportAll";
+			this.btnExportAll.Size = new System.Drawing.Size(92, 23);
+			this.btnExportAll.TabIndex = 4;
+			this.btnExportAll.Text = "Export All";
+			this.btnExportAll.UseVisualStyleBackColor = true;
+			// 
 			// FormExport
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(408, 379);
+			this.Controls.Add(this.btnExportAll);
 			this.Controls.Add(this.label);
 			this.Controls.Add(this.comboBox);
 			this.Controls.Add(this.btnExport);
@@ -101,6 +112,7 @@
 		private System.Windows.Forms.Button btnExport;
 		private System.Windows.Forms.ComboBox comboBox;
 		private System.Windows.Forms.Label label;
+		private System.Windows.Forms.Button btnExportAll;
 	}
 }
 

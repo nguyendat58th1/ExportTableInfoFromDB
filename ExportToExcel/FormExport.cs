@@ -26,7 +26,7 @@ namespace ExportToExcel
 
 		private void FormExport_Load(object sender, EventArgs e)
 		{
-			var props = PropertiesFromTypeOnlyVitualMethod(context);
+			var props = Extension.PropertiesFromTypeOnlyVitualMethod(context);
 			foreach (var prop in props)
 			{
 				comboBox.Items.Add(prop);
@@ -34,21 +34,6 @@ namespace ExportToExcel
 			this.comboBox.DropDownStyle = ComboBoxStyle.DropDown;
 			this.comboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
 			this.comboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
-		}
-
-		public List<string> PropertiesFromTypeOnlyVitualMethod(object atype)
-		{
-			if (atype == null) return new List<string>() { };
-			Type t = atype.GetType();
-			PropertyInfo[] properties = atype.GetType().GetProperties()
-											 .Where(p => p.GetGetMethod().IsVirtual).ToArray();
-			List<string> propNames = new List<string>();
-			foreach (PropertyInfo prop in properties)
-			{
-				Debug.WriteLine(prop.Name);
-				propNames.Add(prop.Name);
-			}
-			return propNames;
 		}
 
 		private void btnExport_Click(object sender, EventArgs e)
