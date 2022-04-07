@@ -126,6 +126,7 @@ namespace ExportToExcel
 							var xlNewSheet = (Excel.Worksheet)xlSheets.Add(xlSheets[k], Type.Missing, Type.Missing, Type.Missing);
 							xlNewSheet.Name = props[k-1];
 							var data = dao.GetDataForGridView(props[k - 1]);
+							labelTableName.Text = props[k - 1];
 							dataGridView.DataSource = data;
 							for (int i = 1; i < dataGridView.Columns.Count + 1; i++)
 							{

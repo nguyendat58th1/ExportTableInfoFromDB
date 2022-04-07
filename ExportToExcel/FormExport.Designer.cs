@@ -33,6 +33,7 @@
 			this.comboBox = new System.Windows.Forms.ComboBox();
 			this.label = new System.Windows.Forms.Label();
 			this.btnExportAll = new System.Windows.Forms.Button();
+			this.labelTableName = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -87,11 +88,21 @@
 			this.btnExportAll.UseVisualStyleBackColor = true;
 			this.btnExportAll.Click += new System.EventHandler(this.btnExportAll_Click);
 			// 
+			// labelTableName
+			// 
+			this.labelTableName.AutoSize = true;
+			this.labelTableName.Location = new System.Drawing.Point(0, 71);
+			this.labelTableName.Name = "labelTableName";
+			this.labelTableName.Size = new System.Drawing.Size(63, 13);
+			this.labelTableName.TabIndex = 5;
+			this.labelTableName.Text = "Table name";
+			// 
 			// FormExport
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(408, 379);
+			this.Controls.Add(this.labelTableName);
 			this.Controls.Add(this.btnExportAll);
 			this.Controls.Add(this.label);
 			this.Controls.Add(this.comboBox);
@@ -114,6 +125,7 @@
 		private System.Windows.Forms.ComboBox comboBox;
 		private System.Windows.Forms.Label label;
 		private System.Windows.Forms.Button btnExportAll;
+		private System.Windows.Forms.Label labelTableName;
 	}
 }
 
