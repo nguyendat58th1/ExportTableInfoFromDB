@@ -21,7 +21,6 @@ namespace Database
 				conn.Open();
 				using (var cmd = new OracleCommand(sqlRead, conn))
 				{
-
 					cmd.Parameters.Add(":TABLENAME", tableName);
 					cmd.ExecuteReader(); //Read data
 					OracleDataAdapter oda = new OracleDataAdapter(cmd);

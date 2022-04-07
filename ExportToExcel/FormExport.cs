@@ -1,13 +1,5 @@
-﻿using ClosedXML.Excel;
-using Database;
-using Oracle.ManagedDataAccess.Client;
+﻿using Database;
 using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
-using Excel = Microsoft.Office.Interop.Excel;
-using System.Linq;
-using System.Reflection;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
@@ -46,27 +38,26 @@ namespace ExportToExcel
 				{
 					try
 					{
-
-						// creating Excel Application  
+						// creating Excel Application
 						Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
-						// creating new WorkBook within Excel application  
+						// creating new WorkBook within Excel application
 						Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
-						// creating new Excel sheet in workbook  
+						// creating new Excel sheet in workbook
 						Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-						// see the excel sheet behind the program  
+						// see the excel sheet behind the program
 						app.Visible = true;
-						// get the reference of first sheet. By default its name is Sheet1.  
-						// store its reference to worksheet  
+						// get the reference of first sheet. By default its name is Sheet1.
+						// store its reference to worksheet
 						worksheet = workbook.Sheets["Sheet1"];
 						worksheet = workbook.ActiveSheet;
-						// changing the name of active sheet  
+						// changing the name of active sheet
 						worksheet.Name = comboBox.SelectedItem.ToString();
-						// storing header part in Excel  
+						// storing header part in Excel
 						for (int i = 1; i < dataGridView.Columns.Count + 1; i++)
 						{
 							worksheet.Cells[1, i] = dataGridView.Columns[i - 1].HeaderText;
 						}
-						// storing Each row and column value to excel sheet  
+						// storing Each row and column value to excel sheet
 						for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
 						{
 							for (int j = 0; j < dataGridView.Columns.Count; j++)
@@ -74,9 +65,9 @@ namespace ExportToExcel
 								worksheet.Cells[i + 2, j + 1] = dataGridView.Rows[i].Cells[j].Value.ToString();
 							}
 						}
-						// save the application  
+						// save the application
 						workbook.SaveAs(sfd.FileName);
-						// Exit from the application  
+						// Exit from the application
 						app.Quit();
 
 						MessageBox.Show("Export successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -98,7 +89,6 @@ namespace ExportToExcel
 			}
 			catch (Exception ex)
 			{
-
 				MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
@@ -112,12 +102,11 @@ namespace ExportToExcel
 				{
 					try
 					{
-
-						// creating Excel Application  
+						// creating Excel Application
 						Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
-						// creating new WorkBook within Excel application  
+						// creating new WorkBook within Excel application
 						Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
-						// see the excel sheet behind the program  
+						// see the excel sheet behind the program
 						app.Visible = true;
 
 						var props = Extension.PropertiesFromTypeOnlyVitualMethod(context);
@@ -125,7 +114,7 @@ namespace ExportToExcel
 						{
 							var xlSheets = workbook.Sheets as Excel.Sheets;
 							var xlNewSheet = (Excel.Worksheet)xlSheets.Add(xlSheets[k], Type.Missing, Type.Missing, Type.Missing);
-							xlNewSheet.Name = props[k-1];
+							xlNewSheet.Name = props[k - 1];
 							var data = dao.GetDataForGridView(props[k - 1]);
 							labelTableName.Text = props[k - 1];
 							dataGridView.DataSource = data;
@@ -133,7 +122,7 @@ namespace ExportToExcel
 							{
 								xlNewSheet.Cells[1, i] = dataGridView.Columns[i - 1].HeaderText;
 							}
-							// storing Each row and column value to excel sheet  
+							// storing Each row and column value to excel sheet
 							for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
 							{
 								for (int j = 0; j < dataGridView.Columns.Count; j++)
@@ -143,7 +132,7 @@ namespace ExportToExcel
 							}
 						}
 						workbook.SaveAs(sfd.FileName);
-						// Exit from the application  
+						// Exit from the application
 						app.Quit();
 
 						MessageBox.Show("Export successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
