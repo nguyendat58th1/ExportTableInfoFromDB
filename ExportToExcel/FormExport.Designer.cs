@@ -50,7 +50,7 @@
 			// btnExport
 			// 
 			this.btnExport.AutoSize = true;
-			this.btnExport.Location = new System.Drawing.Point(304, 35);
+			this.btnExport.Location = new System.Drawing.Point(316, 33);
 			this.btnExport.Name = "btnExport";
 			this.btnExport.Size = new System.Drawing.Size(92, 23);
 			this.btnExport.TabIndex = 1;
@@ -79,12 +79,13 @@
 			// 
 			// btnExportAll
 			// 
-			this.btnExportAll.Location = new System.Drawing.Point(304, 65);
+			this.btnExportAll.Location = new System.Drawing.Point(316, 62);
 			this.btnExportAll.Name = "btnExportAll";
 			this.btnExportAll.Size = new System.Drawing.Size(92, 23);
 			this.btnExportAll.TabIndex = 4;
 			this.btnExportAll.Text = "Export All";
 			this.btnExportAll.UseVisualStyleBackColor = true;
+			this.btnExportAll.Click += new System.EventHandler(this.btnExportAll_Click);
 			// 
 			// FormExport
 			// 
