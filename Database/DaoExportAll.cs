@@ -1,15 +1,16 @@
 ﻿using Oracle.ManagedDataAccess.Client;
-using System.Configuration;
 using System.Data;
 
 namespace Database
 {
-	public class Dao
+	public class DaoExportAll
 	{
+		private Dao dao = new Dao();
+
 		public DataTable GetDataForGridView(string tableName)
 		{
 			DataTable data = new DataTable();
-			string connString = GetConnectionString();
+			string connString = dao.GetConnectionString();
 			string sqlRead = "SELECT t1.column_name, t1.data_type, t1.data_length, t1.data_default, t1.nullable, t2.comments " +
 							"FROM all_tab_columns t1, all_col_comments t2 " +
 							"WHERE t1.column_name = t2.COLUMN_NAME AND t1.TABLE_NAME = " +
@@ -20,6 +21,7 @@ namespace Database
 				conn.Open();
 				using (var cmd = new OracleCommand(sqlRead, conn))
 				{
+
 					cmd.Parameters.Add(":TABLENAME", tableName);
 					cmd.ExecuteReader(); //Read data
 					OracleDataAdapter oda = new OracleDataAdapter(cmd);
@@ -27,11 +29,6 @@ namespace Database
 				}
 			}
 			return data;
-		}
-
-		public string GetConnectionString()
-		{
-			return ConfigurationManager.ConnectionStrings["NexEntities"].ConnectionString;
 		}
 	}
 }
