@@ -12,16 +12,17 @@ namespace Database
     using System;
     using System.Collections.Generic;
     
-    public partial class ID_PERFORMANCE_QUEUE
+    public partial class FL_MAIL_INFO_CC
     {
         public int SID { get; set; }
-        public int DATA_SID { get; set; }
-        public string FUND_CODE { get; set; }
-        public System.DateTime FISCAL_DATE { get; set; }
-        public byte STATUS { get; set; }
-        public System.DateTime ENTRY_DATE { get; set; }
+        public int FL_MAIL_INFO_SID { get; set; }
+        public Nullable<int> OM_USER_INFO_SID { get; set; }
         public System.DateTime UPDATE_DATE { get; set; }
+        public int UPDATE_USER_SID { get; set; }
+        public System.DateTime ENTRY_DATE { get; set; }
+        public int ENTRY_USER_SID { get; set; }
     
-        public virtual ID_PERFORMANCE_DATA ID_PERFORMANCE_DATA { get; set; }
+        public virtual FL_MAIL_INFO FL_MAIL_INFO { get; set; }
+        public virtual OM_USER_INFO OM_USER_INFO { get; set; }
     }
 }

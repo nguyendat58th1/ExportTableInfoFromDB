@@ -12,11 +12,16 @@ namespace Database
     using System;
     using System.Collections.Generic;
     
-    public partial class USER_ACCESS_INFO
+    public partial class FL_FILE_INFO_DATA
     {
         public int SID { get; set; }
-        public string USERID { get; set; }
-        public string ACCESSKEY { get; set; }
-        public string CULTURE { get; set; }
+        public int FL_FILE_INFO_SID { get; set; }
+        public byte[] FL_FILE { get; set; }
+        public System.DateTime UPDATE_DATE { get; set; }
+        public int UPDATE_USER_SID { get; set; }
+        public System.DateTime ENTRY_DATE { get; set; }
+        public int ENTRY_USER_SID { get; set; }
+    
+        public virtual FL_FILE_INFO FL_FILE_INFO { get; set; }
     }
 }

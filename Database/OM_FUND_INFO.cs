@@ -17,7 +17,7 @@ namespace Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public OM_FUND_INFO()
         {
-            this.ID_PERFORMANCE_DATA = new HashSet<ID_PERFORMANCE_DATA>();
+            this.FL_MAIL_INFO = new HashSet<FL_MAIL_INFO>();
             this.LK_BLUE_LINK_RELATION_ENTRY = new HashSet<LK_BLUE_LINK_RELATION_ENTRY>();
             this.LK_BLUE_LINK_RELATION_PUBLISH = new HashSet<LK_BLUE_LINK_RELATION_PUBLISH>();
             this.OM_AGREEMENT_RELATION = new HashSet<OM_AGREEMENT_RELATION>();
@@ -44,7 +44,7 @@ namespace Database
         public string FUND_ABBREVIATION_NAME { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ID_PERFORMANCE_DATA> ID_PERFORMANCE_DATA { get; set; }
+        public virtual ICollection<FL_MAIL_INFO> FL_MAIL_INFO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LK_BLUE_LINK_RELATION_ENTRY> LK_BLUE_LINK_RELATION_ENTRY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

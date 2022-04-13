@@ -74,7 +74,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dao.cs" />
-    <Compile Include="DaoExportAll.cs" />
     <Compile Include="DC_COLOR_INFO.cs">
       <DependentUpon>NexEntities.tt</DependentUpon>
     </Compile>
@@ -160,6 +159,33 @@
       <DependentUpon>NexEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DC_SUBMIT_FILE_INIT_SETTING.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FL_ADMIN_USER_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FL_COMPANY_RELATION.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FL_FILE_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FL_FILE_INFO_DATA.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FL_FILE_INFO_DL.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FL_MAIL_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FL_MAIL_INFO_CC.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FL_PRINTING_COMPANY_INFO.cs">
+      <DependentUpon>NexEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FL_USER_INFO.cs">
       <DependentUpon>NexEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="FWD_AUDIT_SCHEDULE.cs">
@@ -253,15 +279,6 @@
       <DependentUpon>NexEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="ID_PARTS_IMAGE_SETTING.cs">
-      <DependentUpon>NexEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ID_PERFORMANCE_DATA.cs">
-      <DependentUpon>NexEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ID_PERFORMANCE_QUEUE.cs">
-      <DependentUpon>NexEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ID_SCHEDULE_DATA.cs">
       <DependentUpon>NexEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="ID_WORKLOG_INFO.cs">
@@ -572,9 +589,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SCHEMAVERSIONS.cs">
-      <DependentUpon>NexEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="USER_ACCESS_INFO.cs">
       <DependentUpon>NexEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="XB_BASIC_INFO.cs">

@@ -12,15 +12,11 @@ namespace Database
     using System;
     using System.Collections.Generic;
     
-    public partial class ID_SCHEDULE_DATA
+    public partial class FL_FILE_INFO_DL
     {
         public int SID { get; set; }
-        public int COMPANY_SID { get; set; }
-        public string FILE_NAME { get; set; }
-        public byte[] FILE_DATA { get; set; }
+        public int FL_FILE_INFO_SID { get; set; }
         public System.DateTime ENTRY_DATE { get; set; }
-        public System.DateTime UPDATE_DATE { get; set; }
-    
-        public virtual OM_COMPANY_INFO OM_COMPANY_INFO { get; set; }
+        public int ENTRY_USER_SID { get; set; }
     }
 }

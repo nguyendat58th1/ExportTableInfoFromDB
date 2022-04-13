@@ -51,6 +51,8 @@ namespace Database
             this.DC_SEARCH_CHARACTER1 = new HashSet<DC_SEARCH_CHARACTER>();
             this.DC_SUBMIT_FILE_INFO = new HashSet<DC_SUBMIT_FILE_INFO>();
             this.DC_SUBMIT_FILECHECK_RESULT = new HashSet<DC_SUBMIT_FILECHECK_RESULT>();
+            this.FL_ADMIN_USER_INFO = new HashSet<FL_ADMIN_USER_INFO>();
+            this.FL_MAIL_INFO_CC = new HashSet<FL_MAIL_INFO_CC>();
             this.FWD_BUSINESS_CALENDER = new HashSet<FWD_BUSINESS_CALENDER>();
             this.FWD_BUSINESS_CALENDER1 = new HashSet<FWD_BUSINESS_CALENDER>();
             this.FWD_BUSINESS_CALENDER_MSG = new HashSet<FWD_BUSINESS_CALENDER_MSG>();
@@ -253,6 +255,10 @@ namespace Database
         public virtual ICollection<DC_SUBMIT_FILE_INFO> DC_SUBMIT_FILE_INFO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DC_SUBMIT_FILECHECK_RESULT> DC_SUBMIT_FILECHECK_RESULT { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FL_ADMIN_USER_INFO> FL_ADMIN_USER_INFO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FL_MAIL_INFO_CC> FL_MAIL_INFO_CC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FWD_BUSINESS_CALENDER> FWD_BUSINESS_CALENDER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

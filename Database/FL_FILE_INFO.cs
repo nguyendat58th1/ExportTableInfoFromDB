@@ -12,23 +12,27 @@ namespace Database
     using System;
     using System.Collections.Generic;
     
-    public partial class ID_PERFORMANCE_DATA
+    public partial class FL_FILE_INFO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ID_PERFORMANCE_DATA()
+        public FL_FILE_INFO()
         {
-            this.ID_PERFORMANCE_QUEUE = new HashSet<ID_PERFORMANCE_QUEUE>();
+            this.FL_FILE_INFO_DATA = new HashSet<FL_FILE_INFO_DATA>();
         }
     
         public int SID { get; set; }
-        public int FUND_SID { get; set; }
+        public int FL_MAIL_INFO_SID { get; set; }
+        public int OM_ORDER_INFO_SID { get; set; }
         public string FILE_NAME { get; set; }
-        public byte[] FILE_DATA { get; set; }
-        public System.DateTime ENTRY_DATE { get; set; }
+        public string FILE_DOWNLOAD_URL { get; set; }
         public System.DateTime UPDATE_DATE { get; set; }
+        public int UPDATE_USER_SID { get; set; }
+        public System.DateTime ENTRY_DATE { get; set; }
+        public int ENTRY_USER_SID { get; set; }
     
-        public virtual OM_FUND_INFO OM_FUND_INFO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ID_PERFORMANCE_QUEUE> ID_PERFORMANCE_QUEUE { get; set; }
+        public virtual ICollection<FL_FILE_INFO_DATA> FL_FILE_INFO_DATA { get; set; }
+        public virtual FL_MAIL_INFO FL_MAIL_INFO { get; set; }
+        public virtual OM_ORDER_INFO OM_ORDER_INFO { get; set; }
     }
 }
