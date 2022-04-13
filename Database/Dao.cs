@@ -18,7 +18,8 @@ namespace Database
 							 "LEFT JOIN " +
 							 "(SELECT * FROM all_cons_columns t WHERE t.table_name  = :TABLENAME AND (t.POSITION IS NOT NULL AND t.constraint_name NOT LIKE 'SYS%')) " +
 							 "t3 ON t3.column_name  = t2.column_name " +
-							 "WHERE t1.table_name = :TABLENAME AND t2.table_name = :TABLENAME";
+							 "WHERE t1.table_name = :TABLENAME AND t2.table_name = :TABLENAME "+
+							 "ORDER BY COLUMN_ID";
 
 			using (var conn = new OracleConnection(connString))
 			{
