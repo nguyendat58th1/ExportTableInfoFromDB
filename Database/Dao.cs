@@ -48,7 +48,7 @@ namespace Database
 			return data;
 		}
 
-		private string GetConnectionString()
+		public string GetConnectionString()
 		{
 			return ConfigurationManager.ConnectionStrings["NexEntities"].ConnectionString;
 		}
