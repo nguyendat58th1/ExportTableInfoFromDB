@@ -17,8 +17,8 @@ namespace Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public OM_COMPANY_INFO()
         {
+            this.FL_COMPANY_RELATION = new HashSet<FL_COMPANY_RELATION>();
             this.FWD_BUSINESS_CALENDER = new HashSet<FWD_BUSINESS_CALENDER>();
-            this.ID_SCHEDULE_DATA = new HashSet<ID_SCHEDULE_DATA>();
             this.LK_BLUE_LINK_DURATION = new HashSet<LK_BLUE_LINK_DURATION>();
             this.LK_BLUE_LINK_ITEM = new HashSet<LK_BLUE_LINK_ITEM>();
             this.LK_ORANGE_LINK_ITEM = new HashSet<LK_ORANGE_LINK_ITEM>();
@@ -54,9 +54,9 @@ namespace Database
         public int ENTRY_USER_SID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FWD_BUSINESS_CALENDER> FWD_BUSINESS_CALENDER { get; set; }
+        public virtual ICollection<FL_COMPANY_RELATION> FL_COMPANY_RELATION { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ID_SCHEDULE_DATA> ID_SCHEDULE_DATA { get; set; }
+        public virtual ICollection<FWD_BUSINESS_CALENDER> FWD_BUSINESS_CALENDER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LK_BLUE_LINK_DURATION> LK_BLUE_LINK_DURATION { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

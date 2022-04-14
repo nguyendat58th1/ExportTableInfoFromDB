@@ -54,6 +54,15 @@ namespace Database
         public virtual DbSet<DC_SUBMIT_FILE_INFO> DC_SUBMIT_FILE_INFO { get; set; }
         public virtual DbSet<DC_SUBMIT_FILE_INIT_SETTING> DC_SUBMIT_FILE_INIT_SETTING { get; set; }
         public virtual DbSet<DC_SUBMIT_FILECHECK_RESULT> DC_SUBMIT_FILECHECK_RESULT { get; set; }
+        public virtual DbSet<FL_ADMIN_USER_INFO> FL_ADMIN_USER_INFO { get; set; }
+        public virtual DbSet<FL_COMPANY_RELATION> FL_COMPANY_RELATION { get; set; }
+        public virtual DbSet<FL_FILE_INFO> FL_FILE_INFO { get; set; }
+        public virtual DbSet<FL_FILE_INFO_DATA> FL_FILE_INFO_DATA { get; set; }
+        public virtual DbSet<FL_FILE_INFO_DL> FL_FILE_INFO_DL { get; set; }
+        public virtual DbSet<FL_MAIL_INFO> FL_MAIL_INFO { get; set; }
+        public virtual DbSet<FL_MAIL_INFO_CC> FL_MAIL_INFO_CC { get; set; }
+        public virtual DbSet<FL_PRINTING_COMPANY_INFO> FL_PRINTING_COMPANY_INFO { get; set; }
+        public virtual DbSet<FL_USER_INFO> FL_USER_INFO { get; set; }
         public virtual DbSet<FWD_AUDIT_SCHEDULE> FWD_AUDIT_SCHEDULE { get; set; }
         public virtual DbSet<FWD_BUSINESS_CALENDER> FWD_BUSINESS_CALENDER { get; set; }
         public virtual DbSet<FWD_BUSINESS_CALENDER_MSG> FWD_BUSINESS_CALENDER_MSG { get; set; }
@@ -85,9 +94,6 @@ namespace Database
         public virtual DbSet<ID_LABEL_PAGE> ID_LABEL_PAGE { get; set; }
         public virtual DbSet<ID_PAGE_INFO> ID_PAGE_INFO { get; set; }
         public virtual DbSet<ID_PARTS_IMAGE_SETTING> ID_PARTS_IMAGE_SETTING { get; set; }
-        public virtual DbSet<ID_PERFORMANCE_DATA> ID_PERFORMANCE_DATA { get; set; }
-        public virtual DbSet<ID_PERFORMANCE_QUEUE> ID_PERFORMANCE_QUEUE { get; set; }
-        public virtual DbSet<ID_SCHEDULE_DATA> ID_SCHEDULE_DATA { get; set; }
         public virtual DbSet<ID_WORKLOG_INFO> ID_WORKLOG_INFO { get; set; }
         public virtual DbSet<LK_APPLICABLE_DATE> LK_APPLICABLE_DATE { get; set; }
         public virtual DbSet<LK_APPLICABLE_DATE_PUBLISH> LK_APPLICABLE_DATE_PUBLISH { get; set; }
@@ -205,6 +211,5 @@ namespace Database
         public virtual DbSet<XB_UNIT_DENOMINATOR_MEDURE> XB_UNIT_DENOMINATOR_MEDURE { get; set; }
         public virtual DbSet<XB_UNIT_ELEMENT_TYPE> XB_UNIT_ELEMENT_TYPE { get; set; }
         public virtual DbSet<XB_UNIT_NUMERATOR_MEDURE> XB_UNIT_NUMERATOR_MEDURE { get; set; }
-        public virtual DbSet<USER_ACCESS_INFO> USER_ACCESS_INFO { get; set; }
     }
 }

@@ -21,6 +21,7 @@ namespace Database
             this.DC_SUBMIT_FILE_INFO = new HashSet<DC_SUBMIT_FILE_INFO>();
             this.DC_SUBMIT_FILE_INIT_SETTING = new HashSet<DC_SUBMIT_FILE_INIT_SETTING>();
             this.DC_SUBMIT_FILECHECK_RESULT = new HashSet<DC_SUBMIT_FILECHECK_RESULT>();
+            this.FL_FILE_INFO = new HashSet<FL_FILE_INFO>();
             this.FWD_FINANCIAL_STATUS = new HashSet<FWD_FINANCIAL_STATUS>();
             this.FWD_KANRYU_FUND_INFO = new HashSet<FWD_KANRYU_FUND_INFO>();
             this.FWD_RINPOU_STATUS = new HashSet<FWD_RINPOU_STATUS>();
@@ -82,6 +83,8 @@ namespace Database
         public virtual ICollection<DC_SUBMIT_FILE_INIT_SETTING> DC_SUBMIT_FILE_INIT_SETTING { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DC_SUBMIT_FILECHECK_RESULT> DC_SUBMIT_FILECHECK_RESULT { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FL_FILE_INFO> FL_FILE_INFO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FWD_FINANCIAL_STATUS> FWD_FINANCIAL_STATUS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
